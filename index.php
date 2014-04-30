@@ -11,6 +11,7 @@
            $style = "background-color:#FFF667;width:250px";
            $button = new Button("test_btn","btn_test",null,$script,$style);
            echo $button;
+           echo "text";
         ?>
     </body>
 </html>
