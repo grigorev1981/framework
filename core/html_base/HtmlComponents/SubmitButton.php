@@ -1,19 +1,16 @@
 <?php
 
-require_once '/core/html_base/core/HtmlBase.php';
-
-class Button extends HtmlBase{
-    
+class SubmitButton extends Button{
     public function __construct($name, $caption = null, $id = null, $script = null, $style = null) {
-        parent::__construct($name,$caption, $id, $script, $style);
+        parent::__construct($name, $caption, $id, $script, $style);
     }
 
     public function Check() {
-        //parent::Check();
+        parent::Check();
     }
 
     public function __toString() {
-        $code = "<input type='button' name='".$this->getName()."' value='".$this->getCaption()."'";
+        $code = "<input type='submit' name='".$this->getName()."' value='".$this->getCaption()."'";
         if ($this->getStyle() != "")
           $code .= " style='".$this->getStyle ()."'";  
         if ($this->getScript() != "")
@@ -26,10 +23,6 @@ class Button extends HtmlBase{
         return parent::getCaption();
     }
 
-    public function setCaption($caption) {
-        parent::setCaption($caption);
-    }
-    
     public function getId() {
         return parent::getId();
     }
@@ -44,6 +37,10 @@ class Button extends HtmlBase{
 
     public function getStyle() {
         return parent::getStyle();
+    }
+
+    public function setCaption($caption) {
+        parent::setCaption($caption);
     }
 
     public function setId($id) {
@@ -61,6 +58,7 @@ class Button extends HtmlBase{
     public function setStyle($style) {
         parent::setStyle($style);
     }
+
 
 }
 
